@@ -406,8 +406,8 @@ def tab5():
                       future_price = last_price * (1 + future_return)
 
             # Save the price and go next
-                      next_price.loc[len(next_price)] = future_price
-                      #next_price.append(future_price)
+                      
+                      next_price.append(future_price)
                       last_price = future_price
     
     #    Store the result of the simulation
