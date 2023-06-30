@@ -506,7 +506,9 @@ def run():
     
     # Add the ticker selection on the sidebar
     # Get the list of stock tickers from S&P500
-    ticker_list = ['-'] + si.tickers_sp500()
+    tickerdf=pd.read_excel("tickerlist.xlsx")
+    alltickerslist=tickerdf.iloc[:,1].tolist()
+    ticker_list = ['-'] + alltickerslist
     
     # Add selection box
     global ticker
