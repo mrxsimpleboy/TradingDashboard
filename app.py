@@ -480,7 +480,9 @@ def tab5():
 
 def tab6():
       st.title("Your Portfolio's Trend")
-      alltickers = si.tickers_sp500()
+      #alltickers = si.tickers_sp500()
+      tickerdf = pd.read_excel("tickerlist.xlsx")
+      alltickers=tickerdf.iloc[:,1].tolist()
       selected_tickers = st.multiselect("Select tickers in your portfolio", options = alltickers, default = ['AAPL'])
       
       
@@ -514,14 +516,14 @@ def run():
     
     # Add a radio box
     
-    select_tab = st.sidebar.radio("Select tab", ['Summary', 'Chart', 'Statistics', 'Analysis', 'Monte Carlo Simulation', "Your Portfolio's Trend"])
+    select_tab = st.sidebar.radio("Select tab", ['Summary', 'Chart', 'Analysis', 'Monte Carlo Simulation', "Your Portfolio's Trend"])
     # Show the selected tab
     if select_tab == 'Summary':
         tab1()
     elif select_tab == 'Chart':
         tab2()
-    elif select_tab == 'Statistics':
-        tab3()
+    #elif select_tab == 'Statistics':
+    #    tab3()
     elif select_tab == 'Analysis':
         tab4()
     elif select_tab == 'Monte Carlo Simulation':
