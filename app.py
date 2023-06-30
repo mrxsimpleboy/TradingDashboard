@@ -7,7 +7,7 @@ Created on Tue Jun 27 13:56:37 2023
 
 
 
-import yahoo_fin.stock_info as si
+import MyYahooFin as si
 import streamlit as st
 import numpy as np
 import pandas as pd
